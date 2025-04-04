@@ -1,8 +1,11 @@
 # Time and Space Complexity for log_parser
 
-**Time Complexity:** - O(n + k log k), where n is the amount of lines in the log.txt file, and k is the amount of error types in the file.
-                     - O(n) - if k is a small number that makes k log k linear.
-**Space Complexity:** O(k), where k is the amount of error types in the log.txt file.
+**Time Complexity:** 
+- O(n + k log k), where n is the amount of lines in the log.txt file, and k is the amount of error types in the file.
+- O(n) - if k is a small number that makes k log k linear.
+  
+**Space Complexity:** 
+- O(k), where k is the amount of error types in the log.txt file.
 
 ## 1. **`divide_file`**:
 
