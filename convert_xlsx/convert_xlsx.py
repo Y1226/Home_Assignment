@@ -18,6 +18,6 @@ def xlsx_to_csv(input_file, output_file):
 
     print(f"Conversion complete: {output_file}")
 
-# Example usage
-# xlsx_to_txt("logs.txt.xlsx", "logs.txt")
+
+xlsx_to_txt("logs.txt.xlsx", "logs.txt")
 xlsx_to_csv("time_series.xlsx", "time_series.csv")

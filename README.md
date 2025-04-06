@@ -2,7 +2,7 @@
 
 **Time Complexity:** 
 - O(n + k log k), where n is the amount of lines in the log.txt file, and k is the amount of error types in the file.
-- O(n) - if k is a small number that makes k log k linear (like in this case).
+- O(n) - if k is a small number that makes k log k constant time (like in this case).
   
 **Space Complexity:** 
 - O(k), where k is the amount of error types in the log.txt file.
