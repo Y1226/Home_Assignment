@@ -1,4 +1,4 @@
-# Time and Space Complexity for log_parser
+# Time and Space Complexity for part_1 a.
 
 **Time Complexity:** 
 - O(n + k log k), where n is the amount of lines in the log.txt file, and k is the amount of error types in the file.
