@@ -47,13 +47,15 @@ def calc_average(input_file, output_file):
             dt = datetime.strptime(tms, "%Y-%m-%d %H:%M:%S")
             ky = f'{dt.date()} {dt.hour}:00:00'
 
+            # make a dictionary with the date and hour as the key,
+            # and an array of values for that hour.
             dic[ky].append(float(vl))
 
     with open(output_file, 'w') as file:
         file.write("Start Time,Average\n")
 
         for k, v in dic.items():
-            file.write(f'{k},{round(sum(v) / len(v), 2)}\n')
+            file.write(f'{k},{round(sum(v) / len(v), 2)}\n') # write the hours and the average per hour.
 
     return 1
 

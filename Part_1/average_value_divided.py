@@ -11,16 +11,21 @@ def divide_file(input_file, output_folder):
         lines = f.readlines()
         lines.sort()
 
-        file_date = lines[0].split(' ')[0]
+        file_date = lines[0].split(' ')[0] # get the first date
         file = []
 
+        # in the following for loop, checks:
         for i, line in enumerate(lines):
+            # if the date not in current line or we are by the last line
             if file_date not in line or i == len(lines) - 1:
+                # write the lines until now into a file titled by date.
                 output_file = os.path.join(output_folder, f"{file_date}.txt")
                 with open(output_file, 'w') as o_file:
                     o_file.writelines(file)
+                # empty file and update to new date
                 file = []
                 file_date = line.split(' ')[0]
+            # add date to file
             file.append(line)
 
 def calc_average_per_part(input_file):
@@ -46,6 +51,7 @@ def calc_average(input_file, output_file, output_folder):
     folder = Path(output_folder)
     lst = []
 
+    # go through files, calculate average and write them all into a file.
     for file_path in folder.iterdir():
         if file_path.is_file():
             lst += calc_average_per_part(file_path)
