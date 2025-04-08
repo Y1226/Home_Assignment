@@ -1,0 +1,38 @@
+<div class="main">
+	<input type="checkbox" id="chk" aria-hidden="true">
+
+	<!-- Sign up form -->
+	<div class="signup">
+		<form [formGroup]="signupForm" (ngSubmit)="onSubmitSignup()">
+			<label for="chk" aria-hidden="true">Sign up</label>
+			<input type="text" formControlName="company" placeholder="Company Name">
+			<input type="text" formControlName="phone" placeholder="Phone">
+			<input type="text" formControlName="repName" placeholder="Rep Name">
+			<input type="password" formControlName="pswd" placeholder="Password">
+			<div class="invldFld"
+				*ngIf="su_valid && signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched">
+				<small *ngIf="signupForm.get('phone')?.errors?.['pattern']">Invalid phone number</small>
+			</div>
+			<div class="invldFld" *ngIf="!su_valid">
+				<small>All fields required</small>
+			</div>
+			<button type="submit">Sign up</button>
+		</form>
+	</div>
+
+	<!-- Login form -->
+	<div class="login">
+		<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+			<label for="chk" aria-hidden="true">Login</label>
+			<input type="text" formControlName="company" placeholder="Company Name">
+			<input type="password" formControlName="pswd" placeholder="Password">
+			<div class="invldFld" *ngIf="l_valid == 2">
+				<small>All fields required</small>
+			</div>
+			<div class="invldFld" *ngIf="l_valid == 1">
+				<small>User not found</small>
+			</div>
+			<button>Login</button>
+		</form>
+	</div>
+</div>

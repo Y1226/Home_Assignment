@@ -1,0 +1,14 @@
+<form [formGroup]="mdseForm">
+    <label>Add Products</label>
+    <input type="text" formControlName="pdct" placeholder="Product Name">
+    <input type="number" min="0" step="any" formControlName="price" placeholder="Price per individual">
+    <input type="number" min="0" step="any" formControlName="amount" placeholder="Minimum amount to purchase">
+    <div class="invldFld" *ngIf="!valid">
+        <small>All fields required</small>
+      </div>
+    <button (click)="Add()">Add</button>
+</form>
+<label>or</label>
+<button (click)="excel()">Upload Excel</button>
+<br>
+<button style="width: 10%;background-color: gray;" (click)="submit()">Finish</button>

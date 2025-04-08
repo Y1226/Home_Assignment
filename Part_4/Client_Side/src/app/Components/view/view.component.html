@@ -1,0 +1,16 @@
+<div class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Product</div>
+        <div class="col col-3">Total Price</div>
+        <div class="col col-4">Status</div>
+      </li>
+      <li class="table-row" *ngFor="let order of orders">
+        <div class="col col-1" data-label="Product">
+            <span *ngFor="let p of order.product">{{ p.name }}--{{ p.amount }} <br></span>
+        </div>
+        <div class="col col-3" data-label="Price">{{ order.price }}</div>
+        <div class="col col-4" data-label="Status">{{ order.status }}</div>
+    </li>
+    </ul>
+  </div>
